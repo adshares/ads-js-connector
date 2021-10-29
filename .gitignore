@@ -1,6 +1,8 @@
 # build
 node_modules/
-dist/
+public/dist/
+public/main.js
+public/index.html
 npm-debug.log
 # IDE
 .idea/
