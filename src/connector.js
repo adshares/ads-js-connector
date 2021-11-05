@@ -5,8 +5,7 @@ export default class Ads {
     this.port = null
     this.initialized = false
     this.queue = []
-    // const iframeOrigin = 'https://connect.adshares.net'
-    this.iframeOrigin = 'http://localhost:63342/ads-js-connector/public'
+    this.iframeOrigin = 'CONNECTOR_ORIGIN'
   }
 
   #uuidv4 () {
@@ -45,6 +44,7 @@ export default class Ads {
   }
 
   #onMessage (event) {
+    console.debug('#onMessage', event)
     if (!event.data || !event.data.id) {
       throw new Error('ADS Connector: malformed message')
     }
@@ -78,22 +78,50 @@ export default class Ads {
   }
 
   /**
+   * Check if ADS Wallet is enabled
+   *
+   * @returns {Promise<boolean>}
+   */
+  isWalletInstalled () {
+    return this.#sendMessage('walletInstalled')
+  }
+
+  /**
    * Get info about ADS Wallet
    *
    * @returns {Promise<unknown>}
    */
-  getInfo () {
-    return this.#sendMessage('info')
+  getWalletInfo () {
+    return this.#sendMessage('walletInfo')
   }
 
   /**
    * Ping ADS Wallet
    *
-   * @param nonce
+   * @param data
+   * @returns {Promise<{data: string}>}
+   */
+  pingWallet (data = '') {
+    return this.#sendMessage('pingWallet', { data })
+  }
+
+  /**
+   * Get info about ADS client
+   *
    * @returns {Promise<unknown>}
    */
-  ping (nonce = '') {
-    return this.#sendMessage('ping', nonce)
+  getClientInfo () {
+    return this.#sendMessage('clientInfo')
+  }
+
+  /**
+   * Ping ADS client
+   *
+   * @param data
+   * @returns {Promise<{data: string}>}
+   */
+  pingClient (data = '') {
+    return this.#sendMessage('pingClient', { data })
   }
 
   /**
@@ -103,7 +131,7 @@ export default class Ads {
    * @returns {Promise<unknown>}
    */
   authenticate (nonce = '') {
-    return this.#sendMessage('authenticate', { nonce })
+    return this.#sendMessage('authenticate', { nonce, hostname: window.location.host })
   }
 
   /**

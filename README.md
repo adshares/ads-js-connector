@@ -18,15 +18,61 @@ ADS JS Connector is an **browser JavaScript** connector to [ADS JS Client](https
 
 ## Getting Started
 
-Place the following <script>s near the end of your pages, right before the closing </body> tag, to enable ADS connector.
+Place the following script near the end of your pages, right before the closing `</body>` tag, to enable ADS connector.
 
 ```html
 <script src="https://connect.adshares.net/dist/ads-connector.min.js" crossorigin="anonymous"></script>
 ```
 
-### Documentation
+## Usage
 
+### ADS Wallet
 
+All methods return Promises.
+
+```
+const ads = new Ads(); // pass true to enable testnet
+
+// authenticate
+ads.authenticate('nonce').then(...)
+
+// broadcast
+ads.broadcast('4164736861726573').then(...)
+
+// transfer
+ads.sendOne('0001-00000001-8B4E', 1.23, '4164736861726573').then(...)
+
+```
+
+#### Responses
+
+``` 
+// --- authenticate ---
+{
+    status: string,         // "accepted" or "rejected",
+    testnet: boolean,
+    signature: string,      // signature of the nonce
+    account: {
+        address: string,    // account address, eg. '0001-00000001-8B4E'
+        publicKey: string,  // account public key
+        balance: string,    // current accoun balance in ADS (float as string)
+        messageId: integer, // current account message id
+        hash: string        // current account hash
+    }
+}
+```
+``` 
+// --- broadcast/sendOne ---
+{
+    status: string,         // 'accepted' or 'rejected',
+    testnet: boolean,
+    transaction: {
+        id: string,         // transaction id, eg. '0001:00002361:0001'
+        type: string,       // transaction type ('broadcast', 'send_one'),
+        fee: string         // transaction fee in ADS (float as string)
+    }
+}
+```
 
 ### Contributing
 
