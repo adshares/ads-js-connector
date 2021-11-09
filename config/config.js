@@ -1,16 +1,11 @@
-import devConfig from './config.dev'
-
-let config = {
-  connectorOrigin: 'https://connect.adshares.net',
-  chromeExtensionId: 'algblmhagnobbnmakepomicmfljlbehg',
-  mozillaExtensionId: 'f6f321f2-9f13-403f-8832-7b593f35caa1',
+let config = require('./config/config.json')
+if (process.env.BUILD) {
+  try {
+    const devConfig = require(`./config/config.json.${process.env.BUILD}`)
+    config = {
+      ...config,
+      ...devConfig,
+    }
+  } catch (error) {}
 }
-
-if (process.env.BUILD === 'dev') {
-  config = {
-    ...config,
-    ...devConfig,
-  }
-}
-
 export default config

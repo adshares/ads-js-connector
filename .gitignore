@@ -1,10 +1,8 @@
 # build
 node_modules/
-public/dist/
-public/main.js
-public/index.html
 npm-debug.log
 # IDE
 .idea/
 # QA
 .scannerwork/
+config/config.json.*

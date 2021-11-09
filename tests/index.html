@@ -50,7 +50,7 @@
       })
       document.getElementById('info-rpc-btn').addEventListener('click', function () {
         console.debug('info-rpc-btn', ads)
-        ads.getRpcInfo().then(response => {
+        ads.getClientInfo().then(response => {
           console.info('Response:', response)
           document.getElementById('info-result').textContent = JSON.stringify(response, null, 4)
         }, error => {
@@ -103,7 +103,7 @@
         console.debug('ping-rpc-btn', ads)
         const nonce = document.getElementById('ping-nonce').value
         console.debug('Nonce:', nonce)
-        ads.pingRpc(nonce).then(response => {
+        ads.pingClient(nonce).then(response => {
           console.info('Response:', response)
           document.getElementById('ping-result').textContent = JSON.stringify(response, null, 4)
         }, error => {

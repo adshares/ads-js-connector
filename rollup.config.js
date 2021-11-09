@@ -1,10 +1,12 @@
-import resolve from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
-import babel from '@rollup/plugin-babel'
-import htmlTemplate from 'rollup-plugin-generate-html-template'
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import babel from '@rollup/plugin-babel';
+import htmlTemplate from 'rollup-plugin-generate-html-template';
 import replace from '@rollup/plugin-replace';
 import { terser } from 'rollup-plugin-terser';
-import config from './config/config'
+import config from './config/config';
+
+console.debug(config);
 
 const dev = process.env.BUILD === 'dev';
 
@@ -23,7 +25,7 @@ const plugins = [
     presets: ['@babel/preset-env'],
     plugins: ['@babel/plugin-transform-runtime'],
   }),
-]
+];
 
 export default [
   {
@@ -66,4 +68,4 @@ export default [
       dev ? null : terser(),
     ],
   },
-]
+];
