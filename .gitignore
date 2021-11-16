@@ -6,3 +6,6 @@ npm-debug.log
 # QA
 .scannerwork/
 config/config.dev.json
+public/LICENSE
+public/index.js
+public/dist

@@ -8,7 +8,7 @@
     ·
     <a href="https://github.com/adshares/ads-js-connector/issues/new?template=feature_request.md&labels=New%20Feature">Request feature</a>
     ·
-    <a href="https://github.com/adshares/ads-js-connector/wiki">Wiki</a>
+    <a href="https://github.com/adshares/ads/wiki">Wiki</a>
   </p>
 </p>
 
@@ -21,7 +21,7 @@ ADS Wallet Connector is an **browser JavaScript** connector to [ADS Browser Wall
 Place the following script near the end of your pages, right before the closing `</body>` tag, to enable ADS connector.
 
 ```html
-<script src="https://connect.adshares.net/dist/ads-connector.min.js" crossorigin="anonymous"></script>
+<script src="https://connect.adshares.net/dist/connector.min.js" crossorigin="anonymous"></script>
 ```
 
 ## Usage

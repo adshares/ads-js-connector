@@ -3,6 +3,8 @@ import commonjs from '@rollup/plugin-commonjs'
 import babel from '@rollup/plugin-babel'
 import replace from '@rollup/plugin-replace'
 import { terser } from 'rollup-plugin-terser'
+import copy from 'rollup-plugin-copy'
+import markdown from '@jackfranklin/rollup-plugin-markdown'
 import config from './config/config'
 
 const plugins = [
@@ -65,6 +67,24 @@ export default [
     plugins: [
       ...plugins,
       terser()
+    ]
+  },
+  {
+    input: 'src/index.js',
+    output: {
+      file: 'public/index.js'
+    },
+    plugins: [
+      markdown(),
+      terser(),
+      copy({
+        targets: [
+          {
+            src: 'LICENSE',
+            dest: 'public'
+          }
+        ]
+      })
     ]
   }
 ]
