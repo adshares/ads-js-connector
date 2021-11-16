@@ -26,25 +26,38 @@ Place the following script near the end of your pages, right before the closing 
 
 ## Usage
 
-### ADS Wallet
-
 All methods return Promises.
 
-```
-const ads = new Ads(); // pass true to enable testnet
+```js
+AdsConnector.ready(function() {
+    const adsWallet = new AdsWallet(); // pass true to enable testnet
 
-// authenticate
-ads.authenticate('nonce').then(...)
-
-// broadcast
-ads.broadcast('4164736861726573').then(...)
-
-// transfer
-ads.sendOne('0001-00000001-8B4E', 1.23, '4164736861726573').then(...)
-
+    // check if wallet is installed
+    adsWallet.getInfo().then(info => alert(info.version), error => alert('Not installed'))
+    
+    // authenticate
+    adsWallet.authenticate('nonce').then(response => {})
+    
+    // broadcast
+    adsWallet.broadcast('4164736861726573').then(response => {})
+    
+    // transfer
+    adsWallet.sendOne('0001-00000001-8B4E', 1.23, '4164736861726573').then(response => {})
+});
 ```
 
 #### Responses
+
+```
+// --- info ---
+{
+    id: string,
+    name: string,
+    version: string,
+    description: string,
+    author: string
+}
+```
 
 ``` 
 // --- authenticate ---
@@ -61,8 +74,9 @@ ads.sendOne('0001-00000001-8B4E', 1.23, '4164736861726573').then(...)
     }
 }
 ```
+
 ``` 
-// --- broadcast/sendOne ---
+// --- transactions ---
 {
     status: string,         // 'accepted' or 'rejected',
     testnet: boolean,
