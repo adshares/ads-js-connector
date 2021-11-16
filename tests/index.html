@@ -15,7 +15,7 @@
 <body>
 <div class="container">
 
-    <h1 class="text-center">ADS JavaScript Connector</h1>
+    <h1 class="text-center">ADS Browser Connector</h1>
 
     <hr/>
 
@@ -28,7 +28,6 @@
                 <div class="col-4"></div>
                 <div class="col-8">
                     <button type="submit" class="btn btn-primary" id="info-wallet-btn">Get Wallet info</button>
-                    <button type="submit" class="btn btn-primary" id="info-rpc-btn">Get RPC info</button>
                 </div>
             </div>
         </div>
@@ -39,18 +38,8 @@
 
     <script>
       document.getElementById('info-wallet-btn').addEventListener('click', function () {
-        console.debug('info-wallet-btn', ads)
-        ads.getWalletInfo().then(response => {
-          console.info('Response:', response)
-          document.getElementById('info-result').textContent = JSON.stringify(response, null, 4)
-        }, error => {
-          console.error(error)
-          document.getElementById('info-result').textContent = error
-        })
-      })
-      document.getElementById('info-rpc-btn').addEventListener('click', function () {
-        console.debug('info-rpc-btn', ads)
-        ads.getClientInfo().then(response => {
+        console.debug('info-wallet-btn')
+        adsWallet.getInfo().then(response => {
           console.info('Response:', response)
           document.getElementById('info-result').textContent = JSON.stringify(response, null, 4)
         }, error => {
@@ -77,7 +66,6 @@
                 <div class="col-4"></div>
                 <div class="col-8">
                     <button type="submit" class="btn btn-primary" id="ping-wallet-btn">Ping Wallet</button>
-                    <button type="submit" class="btn btn-primary" id="ping-rpc-btn">Ping RPC</button>
                 </div>
             </div>
         </div>
@@ -88,22 +76,10 @@
 
     <script>
       document.getElementById('ping-wallet-btn').addEventListener('click', function () {
-        console.debug('ping-wallet-btn', ads)
+        console.debug('ping-wallet-btn')
         const nonce = document.getElementById('ping-nonce').value
         console.debug('Nonce:', nonce)
-        ads.pingWallet(nonce).then(response => {
-          console.info('Response:', response)
-          document.getElementById('ping-result').textContent = JSON.stringify(response, null, 4)
-        }, error => {
-          console.error(error)
-          document.getElementById('ping-result').textContent = error
-        })
-      })
-      document.getElementById('ping-rpc-btn').addEventListener('click', function () {
-        console.debug('ping-rpc-btn', ads)
-        const nonce = document.getElementById('ping-nonce').value
-        console.debug('Nonce:', nonce)
-        ads.pingClient(nonce).then(response => {
+        adsWallet.ping(nonce).then(response => {
           console.info('Response:', response)
           document.getElementById('ping-result').textContent = JSON.stringify(response, null, 4)
         }, error => {
@@ -143,7 +119,7 @@
         console.debug('authenticate-btn')
         const nonce = document.getElementById('authenticate-nonce').value
         console.debug('Nonce:', nonce)
-        ads.authenticate(nonce).then(response => {
+        adsWallet.authenticate(nonce).then(response => {
           console.info('Response:', response)
           document.getElementById('authenticate-result').textContent = JSON.stringify(response, null, 4)
         }, error => {
@@ -183,7 +159,7 @@
         console.debug('broadcast-btn')
         const message = document.getElementById('broadcast-message').value
         console.debug('Message:', message)
-        ads.broadcast(message).then(response => {
+        adsWallet.broadcast(message).then(response => {
           console.info('Response:', response)
           document.getElementById('broadcast-result').textContent = JSON.stringify(response, null, 4)
         }, error => {
@@ -243,7 +219,7 @@
         console.debug('Amount:', amount)
         const message = document.getElementById('sendone-message').value
         console.debug('Message:', message)
-        ads.sendOne(recipient, amount, message).then(response => {
+        adsWallet.sendOne(recipient, amount, message).then(response => {
           console.info('Response:', response)
           document.getElementById('sendone-result').textContent = JSON.stringify(response, null, 4)
         }, error => {
@@ -254,9 +230,12 @@
     </script>
 
 </div>
-<script src="../public/dist/ads-connector.js" crossorigin="anonymous"></script>
+<script src="../public/dist/connector.js" crossorigin="anonymous"></script>
 <script>
-    const ads = new Ads(true);
+  let adsWallet;
+  AdsConnector.ready(function() {
+    adsWallet = new AdsWallet(true);
+  });
 </script>
 </body>
 </html>

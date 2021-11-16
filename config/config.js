@@ -1,11 +1,13 @@
-let config = require('./config/config.json')
-if (process.env.BUILD) {
-  try {
-    const devConfig = require(`./config/config.json.${process.env.BUILD}`)
-    config = {
-      ...config,
-      ...devConfig,
-    }
-  } catch (error) {}
+const config = require('./config/config.json')
+
+let envConfig
+try {
+  envConfig = require(`./config/config.${process.env.BUILD}.json`)
+} catch (error) {
+  envConfig = {}
 }
-export default config
+
+export default {
+  ...config,
+  ...envConfig
+}

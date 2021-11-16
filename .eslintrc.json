@@ -1,16 +1,12 @@
 {
-    "env": {
-        "node": true,
-        "browser": true,
-        "es2015": true
-    },
-    "extends": [
-        "airbnb-base"
-    ],
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module"
-    },
-    "rules": {
-    }
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false
+  },
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "standard"
+  ]
 }

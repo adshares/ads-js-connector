@@ -7,11 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.0] - 2021-10-28
+## [1.0.0] - 2021-11-16
 
 ### Added
 
-- Support for:
+- Support for: 
+    - info
+    - ping
     - authenticate
     - broadcast,
     - sendOne.

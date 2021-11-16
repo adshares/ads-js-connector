@@ -2,7 +2,7 @@
   <a href="https://adshares.net/">
     <img src="https://adshares.net/logos/ads.svg" alt="Adshares" width=72 height=72>
   </a>
-  <h3 align="center"><small>ADS JS Connector</small></h3>
+  <h3 align="center"><small>ADS Wallet Connector</small></h3>
   <p align="center">
     <a href="https://github.com/adshares/ads-js-connector/issues/new?template=bug_report.md&labels=Bug">Report bug</a>
     ·
@@ -14,7 +14,7 @@
 
 <br>
 
-ADS JS Connector is an **browser JavaScript** connector to [ADS JS Client](https://github.com/adshares/ads-js-client).
+ADS Wallet Connector is an **browser JavaScript** connector to [ADS Browser Wallet](https://github.com/adshares/ads-browser-wallet).
 
 ## Getting Started
 
@@ -96,4 +96,4 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 
 - [ADS Blockchain Wiki](https://github.com/adshares/ads/wiki)
 - [ADS Browser Wallet](https://github.com/adshares/ads-browser-wallet)
-- [ADS JS Client](https://github.com/adshares/ads-js-client)
+- [ADS JS Wallet Client](https://github.com/adshares/ads-js-wallet)

@@ -1,5 +1,5 @@
 {
-  "connectorOrigin": "https://connect.adshares.net",
+  "walletJsUrl": "https://connect.adshares.net/dist/wallet.min.js",
   "chromeExtensionId": "algblmhagnobbnmakepomicmfljlbehg",
   "mozillaExtensionId": "f6f321f2-9f13-403f-8832-7b593f35caa1"
 }
