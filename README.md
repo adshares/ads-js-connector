@@ -24,26 +24,45 @@ Place the following script near the end of your pages, right before the closing 
 <script src="https://connect.adshares.net/dist/connector.min.js"></script>
 ```
 
+### npm module
+
+```bash
+npm install @adshares/ads-connector
+
+yarn add @adshares/ads-connector
+```
+
 ## Usage
+
+### Browser
+```js
+AdsConnector.ready(function() {
+    var adsWallet = new AdsWallet();
+});
+```
+
+### npm module
+```js
+import AdsWallet from '@adshares/ads-connector'
+const adsWallet = new AdsWallet();
+```
 
 All methods return Promises.
 
 ```js
-AdsConnector.ready(function() {
-    const adsWallet = new AdsWallet(); // pass true to enable testnet
+const adsWallet = new AdsWallet(); // pass true to enable testnet
 
-    // check if wallet is installed
-    adsWallet.getInfo().then(info => alert(info.version), error => alert('Not installed'))
-    
-    // authenticate
-    adsWallet.authenticate('nonce').then(response => {})
-    
-    // broadcast
-    adsWallet.broadcast('4164736861726573').then(response => {})
-    
-    // transfer
-    adsWallet.sendOne('0001-00000001-8B4E', 1.23, '4164736861726573').then(response => {})
-});
+// check if wallet is installed
+adsWallet.getInfo().then(info => alert(info.version), error => alert('Not installed'))
+
+// authenticate
+adsWallet.authenticate('nonce').then(response => {})
+
+// broadcast
+adsWallet.broadcast('4164736861726573').then(response => {})
+
+// transfer
+adsWallet.sendOne('0001-00000001-8B4E', 1.23, '4164736861726573').then(response => {})
 ```
 
 #### Responses

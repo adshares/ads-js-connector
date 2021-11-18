@@ -17,6 +17,8 @@
     "url": "https://github.com/adshares/ads-js-connector/issues"
   },
   "homepage": "https://github.com/adshares/ads-js-connector#readme",
+  "main": "dist/ads-connector.cjs.js",
+  "module": "dist/ads-connector.esm.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w --environment BUILD:dev",

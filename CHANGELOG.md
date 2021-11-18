@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2021-11-18
+### Added
+- Import as a module
+
 ## [1.0.0] - 2021-11-16
 ### Added
 - Support for: 
@@ -20,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changelog
 - Contributing
 
-[Unreleased]: https://github.com/adshares/ads-js-connector/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/adshares/ads-js-connector/compare/v1.0.1...HEAD
 
+[1.0.1]: https://github.com/adshares/ads-js-connector/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/adshares/ads-js-connector/releases/tag/v1.0.0

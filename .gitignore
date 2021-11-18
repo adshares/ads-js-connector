@@ -9,3 +9,4 @@ config/config.dev.json
 public/LICENSE
 public/index.js
 public/dist
+dist/
