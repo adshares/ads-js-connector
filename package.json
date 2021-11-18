@@ -1,6 +1,6 @@
 {
   "name": "@adshares/ads-connector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "display-name": "ADS Browser Wallet Connector",
   "description": "Connector to ADS browser wallet.",
   "author": "Adshares <dev@adshares.net>",
