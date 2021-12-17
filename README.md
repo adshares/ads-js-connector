@@ -56,7 +56,7 @@ const adsWallet = new AdsWallet(); // pass true to enable testnet
 adsWallet.getInfo().then(info => alert(info.version), error => alert('Not installed'))
 
 // authenticate
-adsWallet.authenticate('nonce').then(response => {})
+adsWallet.authenticate('message').then(response => {})
 
 // broadcast
 adsWallet.broadcast('4164736861726573').then(response => {})
@@ -83,7 +83,7 @@ adsWallet.sendOne('0001-00000001-8B4E', 1.23, '4164736861726573').then(response 
 {
     status: string,         // "accepted" or "rejected",
     testnet: boolean,
-    signature: string,      // signature of the nonce
+    signature: string,      // signature of the message with prefix "message:"
     account: {
         address: string,    // account address, eg. '0001-00000001-8B4E'
         publicKey: string,  // account public key
