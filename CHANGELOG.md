@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2021-12-17
+### Changed
+- Rename authentication `nonce` to `message`
+
 ## [1.0.1] - 2021-11-18
 ### Added
 - Import as a module
@@ -24,7 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changelog
 - Contributing
 
-[Unreleased]: https://github.com/adshares/ads-js-connector/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/adshares/ads-js-connector/compare/v1.0.2...HEAD
 
+[1.0.2]: https://github.com/adshares/ads-js-connector/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/adshares/ads-js-connector/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/adshares/ads-js-connector/releases/tag/v1.0.0

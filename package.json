@@ -1,6 +1,6 @@
 {
   "name": "@adshares/ads-connector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "display-name": "ADS Browser Wallet Connector",
   "description": "Connector to ADS browser wallet.",
   "author": "Adshares <dev@adshares.net>",
@@ -46,7 +46,7 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "dependencies": {
-    "@adshares/ads-wallet": "^1.0.0",
+    "@adshares/ads-wallet": "^1.0.1",
     "@babel/runtime": "^7.15.4"
   }
 }

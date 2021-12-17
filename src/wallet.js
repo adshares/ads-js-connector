@@ -5,7 +5,7 @@ export default class AdsWallet extends BaseWallet {
     super('CHROME_EXTENSION_ID', 'MOZILLA_EXTENSION_ID', testnet)
   }
 
-  authenticate (nonce) {
-    return super.authenticate(nonce, window.location.hostname)
+  authenticate (message) {
+    return super.authenticate(message, window.location.hostname)
   }
 }
