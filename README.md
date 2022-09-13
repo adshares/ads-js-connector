@@ -8,7 +8,7 @@
     ·
     <a href="https://github.com/adshares/ads-js-connector/issues/new?template=feature_request.md&labels=New%20Feature">Request feature</a>
     ·
-    <a href="https://github.com/adshares/ads/wiki">Wiki</a>
+    <a href="https://docs.adshares.net/ads/">Docs</a>
   </p>
 </p>
 
@@ -127,6 +127,6 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 
 ## More info
 
-- [ADS Blockchain Wiki](https://github.com/adshares/ads/wiki)
+- [ADS Blockchain docs](https://docs.adshares.net/ads/)
 - [ADS Browser Wallet](https://github.com/adshares/ads-browser-wallet)
 - [ADS JS Wallet Client](https://github.com/adshares/ads-js-wallet)
