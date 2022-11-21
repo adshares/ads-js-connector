@@ -136,10 +136,16 @@
         <div class="col-4">
             <div class="row mb-3 align-items-center">
                 <div class="col-4">
-                    <label for="broadcast-message" class="col-form-label">Message (hex)</label>
+                    <label for="broadcast-message" class="col-form-label">Message</label>
                 </div>
                 <div class="col-8">
                     <input type="text" class="form-control" id="broadcast-message" value="4164736861726573">
+                    <div class="form-check">
+                        <input class="form-check-input" checked type="checkbox" value="" id="broadcast-broadcast-raw">
+                        <label class="form-check-label" for="broadcast-broadcast-raw">
+                            Raw message (hex)
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -159,7 +165,9 @@
         console.debug('broadcast-btn')
         const message = document.getElementById('broadcast-message').value
         console.debug('Message:', message)
-        adsWallet.broadcast(message).then(response => {
+        const rawMessage = document.getElementById('broadcast-broadcast-raw').checked
+        console.debug('Raw message: ' + rawMessage)
+        adsWallet.broadcast(message, rawMessage).then(response => {
           console.info('Response:', response)
           document.getElementById('broadcast-result').textContent = JSON.stringify(response, null, 4)
         }, error => {
